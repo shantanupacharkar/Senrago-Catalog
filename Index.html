@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparel Catalog 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="book">
+            <div class="my-page" data-density="hard">
+                <img src="images/01.jpg" alt="Cover">
+            </div>
+
+            <div class="my-page">
+                <img src="images/02.jpg" alt="Page 2">
+            </div>
+            <div class="my-page">
+                <img src="images/03.jpg" alt="Page 3">
+            </div>
+            <div class="my-page">
+                <img src="images/04.jpg" alt="Page 4">
+            </div>
+            
+            <div class="my-page" data-density="hard">
+                <img src="images/05.jpg" alt="Back Cover">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageFlip = new St.PageFlip(
+                document.getElementById('book'),
+                {
+                    width: 400, // Base width of one page
+                    height: 600, // Base height of one page
+                    size: "stretch",
+                    minWidth: 300,
+                    maxWidth: 1000,
+                    minHeight: 400,
+                    maxHeight: 1500,
+                    maxShadowOpacity: 0.5,
+                    showCover: true,
+                    mobileScrollSupport: false 
+                }
+            );
+
+            // Load pages
+            pageFlip.loadFromHTML(document.querySelectorAll('.my-page'));
+        });
+    </script>
+</body>
+</html>
